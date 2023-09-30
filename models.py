@@ -23,12 +23,14 @@ class Series(Base):
     release_year = Column(String(4), nullable=False)
     amout_of_seasons = Column(Integer, nullable=False)
 
+
 class User(Base):
     __talename__ = 'user'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(20), nullable=False)
     surname = Column(String(20), default="")
+
 
 class WatchingList(Base):
     __tablename__ = "watching_list"
@@ -37,8 +39,6 @@ class WatchingList(Base):
     name = Column(String(20), nullable=False)
     date_when_created = Column(String(20), nullable=False)
 
-if __name__ == "main":
+
+if __name__ == "__main__":
     Base.metadata.create_all(eng)
-    
-
-
